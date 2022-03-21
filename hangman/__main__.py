@@ -112,25 +112,25 @@ def hangman(secretWord):
 def user_defined():
     return input("Enter the Word you chose: ")
 
+if __name__ == '__main__':
+    while 0 < 1:
+        print('''Welcome to the game Hangman! \n1. Play a Normal Game of Guessing! \n2. Ask a friend to guess a word defined by You!\n0. Exit
+        ''')
+        choice = int(input("Enter your Choice!: "))
 
-while 0 < 1:
-    print('''Welcome to the game Hangman! \n1. Play a Normal Game of Guessing! \n2. Ask a friend to guess a word defined by You!\n0. Exit
-    ''')
-    choice = int(input("Enter your Choice!: "))
-
-    if choice == 1:
-        secretWord = chooseWord(wordlist).lower()
-        hangman(secretWord)
-
-    elif choice == 2:
-        secretWord = input("Enter the Word you chose: ")
-        if secretWord.isalpha():
+        if choice == 1:
+            secretWord = chooseWord(wordlist).lower()
             hangman(secretWord)
-        elif secretWord.isalnum():
-            user_defined()
 
-    elif choice == 0:
-        exit()
-    else:
-        print("Invalid Choice!")
-        continue
+        elif choice == 2:
+            secretWord = input("Enter the Word you chose: ")
+            if secretWord.isalpha():
+                hangman(secretWord)
+            elif secretWord.isalnum():
+                user_defined()
+
+        elif choice == 0:
+            exit()
+        else:
+            print("Invalid Choice!")
+            continue
